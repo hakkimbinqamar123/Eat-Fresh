@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+	 body{
+
+    background-image: url('/static/deliveryapp/images/pro-img/background.jpg');
+    height: max-content;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+</style>
+<body>
+{% load static %}
+{% block title %}{% endblock %}
+{% block background %}{% endblock %}
+{% block body %}
+<center>
+    <h2>Staff Details</h2>
+	<br>
+	<div class="container">
+    <form role="form" name="frm"  method="post">
+        {% csrf_token %}
+        <div class="form-group">
+			<label for="username">username</label>
+	        <input class="form-control" type="text"  id="username" name="username" value="{{up.username}}" required="required">
+
+		</div>
+
+	    <div class="form-group">
+			<label for="phoneno">phoneno</label>
+	        <input type="text"  class="form-control" id="phoneno" name="phoneno" value="{{up.phoneno}}">
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+	        <input type="email" class="form-control" id="email" name="email" value="{{up.email}}"></td>
+		</div>
+		<div class="form-group">
+			<label for="address">Address</label>
+	        <input type="address" class="form-control" id="address" name="address" value="{{up.address}}"></td>
+		</div>
+
+        <div class="form-group">
+			<label for="password">password</label>
+	        <input type="password" class="form-control" id="password" name="password" value="{{up.password}}"></td>
+		</div>
+		<button type="submit" class="btn btn-info" id="bt" name="bt">Update</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+		<button><a href="staff_home2">Home</a></button>
+	    </table>
+    </form>
+	{{msg}}
+	</div>
+</center>
+{% endblock %}
+
+</body>
+</html>

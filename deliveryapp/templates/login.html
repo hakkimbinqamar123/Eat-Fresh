@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static './deliveryapp/css/login.css'%}" type="text/css">
+</head>
+<style>
+    body{
+
+    background-image: url('/static/deliveryapp/images/pro-img/background.jpg');
+    height: max-content;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+<body>
+ <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+<form  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>LOGIN</h2>
+    <label for="email"></label>
+    <input class="user-input" type="text" name="username" placeholder="ENTER USERNAME" required>
+    <label for="password"></label>
+    <input class="user-input" type="password" name="password" placeholder="ENTER YOUR PASSWORD" required>
+    <button>Log In</button>
+    <p>Don't have an Account? <a href="/"> Register Now!</a></p>
+    <p>Back to Home? <a href="/"> Home!</a></p>
+</form>
+<!-- //copyright -->
+<ul class="colorlib-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h2><font color="#366092">PAYMENT</font></h2>
+<div class="container">
+    <form name="frm"  role="form" method="post">
+            {% csrf_token %}
+           <div class="form-group">
+               <label for="card">Card Name</label>
+               <input type="text" class="form-control"  name="card" required="required" >
+           </div>
+           <div class="form-group">
+               <label for="number">Card Number</label>
+               <input type="text" class="form-control" name="number" required="required" >
+           </div>
+
+        <div class="form-group">
+               <label for="cvv">CVV</label>
+               <input type="text" class="form-control" name="cvv" required="required" >
+           </div>
+
+       <div class="form-group">
+               <label for="qty">Quantity</label>
+               <input type="text" class="form-control" name="qty" required="required" >
+           </div>
+
+            <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+            <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+    </form>
+</div>
+</center>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Products</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .form-container {
+            width: 50%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Edit Products</h2>
+
+        <form action="" method="post" enctype="multipart/form-data" class="form-container">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" class="form-control" value="{{ t.productname }}" name="productname">
+            </div>
+
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="text" class="form-control" value="{{ t.quantity }}" name="quantity">
+            </div>
+
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" class="form-control" value="{{ t.price }}" name="price">
+            </div>
+
+            <div class="form-group">
+                <label>Photo</label>
+                <input type="text" class="form-control" value="{{ t.photo }}" name="name">
+            </div>
+
+            <input type="hidden" name="id" value="{{ t.product_id }}">
+
+            <button class="btn btn-primary" type="submit">Update</button>
+
+            {{ msg }}
+        </form>
+
+        <a href="staff_home2">BACK TO HOME</a>
+    </div>
+</body>
+</html>

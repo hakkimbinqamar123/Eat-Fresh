@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user list</title>
+<style>
+
+		 body{
+
+    background-image: url('/static/deliveryapp/images/pro-img/background.jpg');
+    height: max-content;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+        #customers {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 70%;}
+        #customers td, #customers th { border: 1px solid #ddd;padding: 8px;}
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        #customers tr:hover {background-color: #ddd;}
+        #customers th { padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #04AA6D;color: heveltika;}
+</style>
+
+</head>
+
+{% block content %}
+
+<h1><center>LIST OF STAFFS</center></h1>
+<table border="2" id="customers">
+    <tr>
+        <center>
+            <td>USER NAME</td>
+      <td>PHONE NO</td>
+
+      <td>EMAIL</td>
+      <td>PASSWORD</td>
+        <td>STATE</td>
+        <td>DISTRICT</td>
+        <td>ADDRESS</td>
+        <td>SHOP_ID</td>
+        <td>PHOTO</td>
+             <td>VERIFICATION</td>
+        </center>
+
+
+
+    </tr>
+    {% for i in a %}
+    <tr>
+        <td>{{i.username}}</td>
+        <td>{{i.phoneno}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.password}}</td>
+        <td>{{i.state}}</td>
+        <td>{{i.district}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.shop_id}}</td>
+        <td><img src = "../media/{{i.photo}}" height=" 100px" width = "100px"></td>
+        <td><img src = "../media/{{i.verification}}" height=" 100px" width = "100px"></td>
+        <td><a href="/deletestaffs/{{ i.staff_id }}"><input type="button" value="DELETE"></a></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+<a href="adminhome">BACK TO HOME</a>
+
+
+{% endblock content %}
+</html>

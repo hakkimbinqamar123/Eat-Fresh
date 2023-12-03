@@ -1,0 +1,43 @@
+from django.urls import path
+from deliveryapp import views
+from deliveryapp.views import home,login,signup,staff_registration,staff_home1,staff_home2,Listuser,Liststaff,staffprofile1,staffprofile2,customerprofile,productadd1,productadd2,sample1,sample2,shop1product,shop2product,customerview1,customerview2,customerhome
+urlpatterns=[
+    path('',views.home, name="home"),
+    path('staff_home1',views.staff_home1),
+    path('staff_home2',views.staff_home2),
+    path('signup', views.signup),
+    path('logi', views.login),
+    path('staff_registration', views.staff_registration),
+    path('updatestatus/<int:staff_id>/',views.updatestatus),
+    path('areject/<int:staff_id>',views.agentreject),
+    path('usertype',views.ch),
+    path('listofusers',Listuser.as_view()),
+    path('deleteusers/<int:user_id>/',views.deleteuser),
+    path('listofstaffs', Liststaff.as_view()),
+    path('deletestaffs/<int:staff_id>/', views.deletestaff),
+    path('staffprofile1', views.staffprofile1),
+    path('staffprofile2', views.staffprofile2),
+    path('customerprofile', views.customerprofile),
+    path('productadd1', views.productadd1),
+    path('sample1', views.customerview1),
+    path('sample2', views.customerview2),
+    path('sample1', views.sample1),
+    path('sample2', views.sample2),
+    path('staffproductview/', views.shop1product),
+    path('staffproductview2', views.shop2product),
+    path('deleteproduct/<int:product_id>/', views.deleteproduct),
+    path('customerhome', views.customerhome),
+    path('adminhome', views.adminhome),
+    path('purchase', views.purchase),
+    path('productadd2', views.productadd2),
+    path('producteditt',views.product_edit),
+    path('producteditt2',views.product_edit2),
+    path('sample3',views.customerview3),
+    path('error',views.customerview3),
+    path('sample4',views.error),
+    path('add_to_cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
+    path('cart/', views.cart_page, name='cart_page'),
+    path('remove_from_cart/<int:cart_item_id>/', views.remove_from_cart, name='remove_from_cart'),
+
+
+]

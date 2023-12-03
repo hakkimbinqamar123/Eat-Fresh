@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Custom Theme files -->
+<link rel="stylesheet" href="{% static './deliveryapp/css/signup.css'%}" >
+
+</head>
+<style>
+input.text {
+  margin: 2em 0;
+}
+
+input[type="address"] {
+  font-size: 0.9em;
+  color: #fff;
+  font-weight: 100;
+  width: 94.5%;
+  display: block;
+  border: 2px solid black;
+  padding: 0.8em;
+  border: solid 1px black;
+  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #fff 4%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #fff 4%);
+  background-position: -800px 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+</style>
+<body>
+    <form method="post" action="">
+        {% csrf_token %}
+        <h2>REGISTER</h2>
+        <input class="text" type="text" name="username" pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" title="Enter Name In Valid Format (firstname+ +lastname)" placeholder="Username">
+        <input class="text email" type="email" name="email" placeholder="Email" >
+        <input class="text phone" type="text" name="phone" pattern="[7-9]{1}[0-9]{9}" required title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="Phone">
+        <input type="password" name="passwd" id="passwd" placeholder="Password" >
+        <input type="submit"  value="REGISTER">
+        <p class="text">Have an Account? <a  href="logi"> Login Now!</a></p><br>
+        <p class="text">Back to Home? <a  href="/"> Home!</a></p>
+    </form>
+
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

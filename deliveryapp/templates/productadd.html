@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Add</title>
+    <style>
+        body {
+            background-image: url('/static/deliveryapp/images/pro-img/background.jpg');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+
+        #form-div {
+            background-color: rgb(207, 207, 207);
+            text-align: center;
+            width: 35%;
+            padding: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 15px 15px rgb(63, 63, 63);
+        }
+
+        #form-div h3 {
+            font-size: 50px;
+        }
+
+        .user-input,
+        .user-input-btn {
+            border-radius: 5px;
+            padding: 20px 5px;
+            margin-bottom: 30px;
+            width: 50%;
+            box-sizing: border-box;
+            border-style: none;
+        }
+
+        .user-input-btn {
+            background-color: rgb(45, 0, 66);
+            color: white;
+        }
+
+        form i {
+            margin-left: -30px;
+            cursor: pointer;
+        }
+
+        form {
+            width: 100%; /* Adjust width as needed */
+            overflow: hidden;
+        }
+
+        label {
+            clear: both;
+            float: left;
+            width: 40%;
+        }
+
+        input {
+            float: left;
+            width: 55%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form-div">
+        <form method="POST" class="post-form" enctype="multipart/form-data">
+            <div>
+                <h3>PRODUCT ADD</h3>
+                <label for="productname">Product Name:</label>
+                <input type="text" name="productname" size="20" placeholder="Product Name" required><br>
+
+                <label for="quantity">Product Quantity:</label>
+                <input type="text" name="quantity" placeholder="Product Quantity" required><br>
+
+                <label for="price">Price:</label>
+                <input type="text" name="price" size="20" placeholder="Price" required><br>
+
+                <label for="productphoto">Product Photo:</label>
+                <input type="file" id="photo" name="photo" placeholder="your photo" upload_to="/images" required
+                    title="Please Upload Your Latest Photo"><br>
+
+                <button type="submit" class="user-input-btn">Save</button><br>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
